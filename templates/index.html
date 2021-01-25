@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>top page</h1>
+{% for post in posts%}
+<h2>title:{{psot}}</h2>
+<p>due: {{post.due.date()}}</p>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<form action="/" method="post">
+    
+    <label for="title">title</label>
+    <input type="text" name="title">
+    
+    <label for="detail">detail</label>
+    <input type="text" name="detail">
+    
+    <label for="due">due</label>
+    <input type="date" name="due" required>
+    
+    <input type="submit" name="Create">
+</form>
+{% endblock %}
