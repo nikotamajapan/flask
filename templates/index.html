@@ -1,13 +1,25 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<h1>top page</h1>
-<a href="/create" role='button'>create new task</a>
+<a class="btn btn-info btn-lg m-5" href="/create" role='button'>create new task</a>
 {% for post in posts %}
-<h2>title: {{post.title}} </h2>
-<p>due: {{post.due.date()}}</p>
-<a href="detail/{{ post.id }}" role='button'>detail</a>
-<a href="update/{{ post.id }}" role='button'>update</a>
-<a href="delete/{{ post.id }}" role='button'>delete</a>
+<div class="card w-50 mb-3" style="margin: auto;">
+    <div class="card-body">
+        {% if post.due.date()< today %}    
+        <div class="alert alert-warning" role="alert">
+            over due!
+        </div>
+          
+        {% endif %}
+
+        <h2 class="card-title">title: {{post.title}} </h2> 
+        <p>due: {{post.due.date()}}</p>
+        <a class="btn btn-secondary btn-sm" href="detail/{{ post.id }}" role='button'>detail</a>
+        <a class="btn btn-success btn-sm" href="update/{{ post.id }}" role='button'>update</a>
+        <a class="btn btn-danger btn-sm" href="delete/{{ post.id }}" role='button'>delete</a>
+    </div>
+</div>
+
+
 {% endfor %}
 {% endblock %}
