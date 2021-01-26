@@ -5,5 +5,7 @@
 {% for post in posts %}
 <h2>title: {{post.title}} </h2>
 <p>due: {{post.due.date()}}</p>
+<a href="detail/{{ post.id }}" role='button'>detail</a>
+<a href="delete/{{ post.id }}" role='button'>delete</a>
 {% endfor %}
 {% endblock %}
