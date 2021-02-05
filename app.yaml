@@ -1,1 +1,3 @@
 runtime: python38 # or python37 for Python 3.7
+
+entrypoint: gunicorn -b :$PORT main:app
